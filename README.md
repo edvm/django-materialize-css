@@ -28,6 +28,26 @@ Then include it in your Django project::
         ...
     )
 
+Finally include the css/js directives in your html document::
+
+    <html>
+      <head>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+      </head>
+      <body>
+        ...
+        <!--Import jQuery before materialize.js-->
+        {% block footer %}
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+        {% endblock %}
+        ...
+      </body>
+    </html>
+
+That's all!
+
 This also assumes you haven't removed ``django.contrib.staticfiles.finders.AppDirectoriesFinder``
 from the ``STATICFILES_FINDERS`` config setting.
 
