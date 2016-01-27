@@ -30,6 +30,7 @@ Then include it in your Django project::
 
 Finally include the css/js directives in your html document::
 
+    {% load staticfiles %}
     <html>
       <head>
         <!--Import materialize.css-->
